@@ -1,0 +1,66 @@
+系统：Linux
+服务器: Nginx + Apache
+数据库： Mysql+Mongo
+开发语言: PHP
+框架： Phalcon
+	(Phalcon is a web framework implemented as a C extension 
+	offering high performance and lower resource consumption )
+前端: HTML5+css3+Javascript
+浏览器支持:Google,Firefox,IE8+,..
+
+项目名称：学生实习管理平台
+宗旨：为大学生提供实习机会，为企业寻找合适的人才。 旨在搭建一个双向的平台，为大学生和企业提供直连的服务，让双方的资源能得到更好的利用。
+
+创始人：
+	Hongker(破晓)
+	xiaok2013@live.com
+	
+开发者：
+	Hongker(破晓)
+	xiaok2013@live.com
+	
+系统架构：
+	/ -- 根目录
+		apps/ -- 项目代码
+		
+			backend/ -- 系统后台管理
+				controllers/ -- 控制器
+				views/ -- 视图
+				Module.php -- 模块分控器
+				
+			configs/ -- 系统配置
+				app.sql -- 数据库结构文件
+				config.ini -- 系统配置文件
+				
+			frontend/ -- 前台
+				controllers/ -- 控制器
+				views/ -- 视图
+				Module.php -- 模块分控器
+				
+			models/ -- 模型
+			
+			Util/ -- 工具类
+			
+		public/ --前台文件
+		
+			css/ -- 样式文件
+			
+			fonts/ -- 字体集合
+			
+			images/ -- 图片
+			
+			js/ -- js脚本文件
+			
+			videos/ --视频
+			.htaccess --重写规则
+			index.php --入口文件
+		.htaccess 
+
+系统功能模块：
+	首页
+	登录
+	注册
+	公司发布实习需求，显示实习信息，查看投递意向，查看学生信息，筛选学生
+	学生完善信息，学生查看实习信息，查看公司介绍，学生投递意向。
+	
+	
