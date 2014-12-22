@@ -29,8 +29,8 @@ class LoginController extends \Phalcon\Mvc\Controller {
 		if ($this->request->isPost()) {
             if ($this->security->checkToken()) {
                 //The token is ok
-                $password = $this->request->getPost('pass');
-                $username = $this->request->getPost('name');
+                $password = $this->request->getPost('pass','string');
+                $username = $this->request->getPost('name','string');
                 
                 if($this->_checkUser($username,$password)) {
                 	$user = Users::findFirst("username='$username'");

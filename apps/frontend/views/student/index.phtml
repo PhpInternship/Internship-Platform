@@ -1,0 +1,32 @@
+<script src="/js/jquery.bxslider.min.js"></script>
+<!-- bxSlider CSS file -->
+<link href="/css/jquery.bxslider.css" rel="stylesheet" />
+<<style>
+<!--
+@media screen and (max-width: 800px) {
+	.bxslider li  img{
+		height:150px;
+	}
+}
+-->
+</style>
+<div class="main">
+<ul class="bxslider">
+  <li><img src="/images/slider1.jpeg" /></li>
+  <li><img src="/images/slider2.jpeg" /></li>
+  <li><img src="/images/slider3.jpeg" /></li>
+</ul>
+
+<div class="container">
+	<?php echo $controller?>
+</div>
+</div>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	  $('.bxslider').bxSlider({
+		  auto: true,
+	  });
+	});
+
+</script>

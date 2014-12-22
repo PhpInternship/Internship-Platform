@@ -13,11 +13,32 @@ namespace Frontend\Controllers;
  *
  */
 class BaseController extends \Phalcon\Mvc\Controller {
+	
 	/**
-	 * 使用模板
+	 * 模块名称
+	 * @var String
 	 */
-	public function initialize()
-	{
+	protected $controller;
+	
+	/**
+	 * 初始化处理
+	 */
+	protected function initialize() {
+		//给页面的标题添加前缀
+	
+		$this->view->setVar("controller",$this->controller);
+		//设置模板
 		$this->view->setTemplateAfter('common');
+	
+	
+	
+	}
+	
+	/**
+	 * 获取模块名称
+	 * @param unknown $dispatcher
+	 */
+	public function beforeExecuteRoute($dispatcher) {
+		$this->controller = $dispatcher->getControllerName();
 	}
 }
