@@ -1,8 +1,8 @@
 <?php
+namespace Models;
 /**
  * User 模型
  */
-namespace Models;
 class Users extends Base {
 
 }

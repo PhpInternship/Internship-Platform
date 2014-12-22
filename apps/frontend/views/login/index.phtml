@@ -20,17 +20,21 @@
   <body class="login-bg">
   	<!-- container -->
    	<div class="main login-form ">
-   		<form class="form-body" method="post" action="login/auth">
+   		<form class="form-body" method="post" action="/login/auth">
 		<div class="form-group">
 			<input class="form-control login-field" value="" placeholder="请输入用户名" name="name" type="text">
 			<label class="login-field-icon fui-user" for="login-name"></label>
 		</div>
-
+		
 		<div class="form-group">
 			<input class="form-control login-field" value="" placeholder="请输入密码" name="pass" type="password">
 			<label class="login-field-icon fui-lock" for="login-pass"></label>
 		</div>
-
+		<div class="form-group text-center">
+			<?php $this->flashSession->output() ?>
+		</div>
+		<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+        value="<?php echo $this->security->getToken() ?>"/>
 		<button class="btn btn-primary btn-lg btn-block" type="submit" >登 录</button>
 		<a class="login-link" href="#">已经忘记密码?</a>
 		</form>
