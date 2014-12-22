@@ -7,19 +7,25 @@
           </div>
 	</div>
 	<div class="col-sm-6 col-xs-12">
-		<form class="login-form" method="post" action="register/add">
+		<form class="login-form" method="post" action="/register/add">
 		<div class="form-group">
 			<input class="form-control login-field"  autofocus placeholder="请填入要注册的用户名" name="name" type="text">
 			<label class="login-field-icon fui-user" for="name"></label>
 		</div>
 		<div class="form-group">
-			<input class="form-control login-field"  placeholder="请填入您的邮箱" name="pass" type="password">
+			<input class="form-control login-field"  placeholder="请填入您的邮箱" name="email" type="email">
 			<label class="login-field-icon fui-mail" for="email"></label>
 		</div>
+		
 		<div class="form-group">
 			<input class="form-control login-field"  placeholder="请填写密码" name="pass" type="password">
 			<label class="login-field-icon fui-lock" for="pass"></label>
 		</div>
+		<div class="form-group text-center">
+			<?php $this->flashSession->output() ?>
+		</div>
+		<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+        value="<?php echo $this->security->getToken() ?>"/>
 
 		<button class="btn btn-success btn-lg btn-block" type="submit" >注 册</button>
 		

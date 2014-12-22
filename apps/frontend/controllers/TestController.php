@@ -1,7 +1,7 @@
 <?php
 namespace Frontend\Controllers;
 
-use Models\User;
+use Models\Users;
 /**
  * 简述： 测试类。
  * 
@@ -15,7 +15,7 @@ use Models\User;
  */
 class TestController extends \Phalcon\Mvc\Controller {
 	public function indexAction() {
-		var_dump(User::findFirst());
+		var_dump(Users::findFirst());
 		
 		//echo $this->security->getTokenKey();
 		
