@@ -45,12 +45,14 @@ insert into users(username,email,sex) values('hongker','xiaok@qq.com','男');
  * 3.公司信息表 companys
  * id 主键
  * name 公司名称
+ * logo 公司logo
  * city 城市id
  * address 详细地址
  * type 公司类型(国企，民企，外企。。)
  * field 经营领域(金融，互联网，土建。。)
  * tel 联系电话
  * state 状态(0：待审核，1：审核通过)
+ * description 简介
  * created_at 创建时间
  * updated_at 更新时间
  */
@@ -58,21 +60,26 @@ drop table if exists companys;
 create table companys(
 	id int not null primary key auto_increment,
 	name varchar(50) not null,
+	logo varchar(100) not null,
 	city int not null,
-	address varchar(50) not null,
+	address varchar(100) not null,
 	type varchar(10) not null,
 	field varchar(200) not null,
 	tel varchar(20) not null,
 	state tinyint not null,
+	description varchar(255) not null,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;
+insert into companys(name,logo,city,address,type,field,tel,state,description)
+values('惠普科技有限公司','/images/hp.png',1,'北京市朝阳区建国路112号中国惠普大厦(近招商局大厦)','外企','互联网','18728400401',1,'惠普（HP）公司成立于1939年，是一家业务运营遍及全球170多个国家和地区的高科技公司。我们致力于探索科技和服务如何帮助人们和企业解决其遇到的问题和挑战，并把握机遇、实现愿景、成就梦想。我们运用新的思想和理念来打造更简单、更有价值、更值得信赖的技术体验，不断帮助客户改善其生活和工作方式。');
 
 /*
  * 4.实习工作表 jobs
  * id 主键
  * company_id 公司id
  * name 岗位名称
+ * city 工作城市
  * type 岗位类型
  * worktime 工作时间
  * workers 所招人数
@@ -86,6 +93,7 @@ create table jobs(
 	id int not null primary key auto_increment,
 	company_id int not null,
 	name varchar(50) not null,
+	city int not null,
 	type varchar(20) not null,
 	worktime varchar(50) not null,
 	workers smallint not null,
@@ -159,6 +167,24 @@ create table experiences(
 	description varchar(255) not null,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
+)charset=utf8;
+
+/*
+ * 城市表
+ * id 主键
+ * city 城市名称
+ * province 省
+ * type 类型
+ * created_at 创建时间
+ * updated_at 更新时间
+ */
+drop table if exists citys;
+create table citys(
+	id int not null primary key auto_increment,
+	city varchar(20) not null,
+	province varchar(20) not null,
+	type varchar(20) not null,
+	key city(city)
 )charset=utf8;
 
 /*

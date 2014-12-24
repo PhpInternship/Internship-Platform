@@ -1,0 +1,59 @@
+
+<div class="main">
+	<div class="company-info">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3 company-logo">
+					<img alt="logo" class="img-responsive" src="<?php echo $company->logo?>">
+				</div>
+				<div class="col-sm-9">
+					<h5 ><?php echo $company->name?></h5>
+					<small> 规模：10000人以上 性质：中外合营(合资·合作) 所在地：北京 </small><br>
+					<button class="btn btn-embossed btn-sm btn-danger">
+						<span class="fui-plus"></span> 关 注
+					</button>
+				</div>
+			</div>
+			<div class="description">
+				<small><?php echo $company->description?></small>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="job-list">
+			<blockquote>最新发布</blockquote>
+			<div class="row demo-tiles">
+					<?php for($i=0;$i<6;$i++):?>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="tile">
+							<img src="/images/icons/svg/loop.svg" alt="Compas"
+								class="tile-image big-illustration">
+							<h3 class="tile-title">Web Oriented</h3>
+							<p>I am the bone of my sword.</p>
+							<a class="btn btn-info btn-large btn-block"
+								href="http://designmodo.com/flat">查看详情</a>
+						</div>
+					</div>
+					<?php endfor;?>
+				</div>
+			<blockquote>结束投递</blockquote>
+			<div class="row demo-tiles">
+					<?php for($i=0;$i<6;$i++):?>
+					<div class="col-md-3 col-sm-6 col-xs-12">
+						<div class="tile">
+							<img src="/images/icons/svg/retina.svg" alt="Compas"
+								class="tile-image big-illustration">
+							<h3 class="tile-title">Web Oriented</h3>
+							<p>I am the bone of my sword.</p>
+							<a class="btn btn-success btn-large btn-block"
+								href="http://designmodo.com/flat">查看详情</a>
+						</div>
+					</div>
+					<?php endfor;?>
+				</div>
+		</div>
+	</div>
+
+
+</div>
+

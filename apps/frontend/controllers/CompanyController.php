@@ -1,6 +1,7 @@
 <?php
 namespace Frontend\Controllers;
 
+use Models\Companys;
 /**
  * 简述：公司模块。
  * 
@@ -13,8 +14,22 @@ namespace Frontend\Controllers;
  *
  */
 class CompanyController extends BaseController {
+	/**
+	 * 首页内容显示
+	 */
 	public function indexAction() {
 		
+	}
+	
+	/**
+	 * 公司详情
+	 */
+	public function detailAction() {
+		$id = $this->dispatcher->getParam(0,'int');
+		
+		$company = Companys::findFirst($id);
+		
+		$this->view->setVar('company',$company);
 	}
 	
 	

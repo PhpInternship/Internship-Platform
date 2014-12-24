@@ -166,7 +166,7 @@ ul {
 	font-size: 2.25em;
 }
 .main {
-	margin-top: 21px;
+	margin-top: 51px;
 }
 @media screen and (max-width: 800px) {
 	.footer {
@@ -227,3 +227,19 @@ blockquote {
 .job-list .date {
 	float:right;
 }
+.company-info {
+	background:#E7E7E7;
+	padding:20px 10px;
+}
+.company-logo img{
+	padding: 10px 18px 10px 18px;
+}
+.company-info .description {
+	margin-top:20px;
+	text-indent: 2em;
+}
+.company-info .attention {
+	margin-top:10px;
+}
+
+
