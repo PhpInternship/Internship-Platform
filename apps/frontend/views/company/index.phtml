@@ -1,7 +1,6 @@
 <script src="/js/jquery.bxslider.min.js"></script>
 <!-- bxSlider CSS file -->
 <link href="/css/jquery.bxslider.css" rel="stylesheet" />
-<
 <style>
 <!--
 @media screen and (max-width: 800px) {
@@ -50,14 +49,14 @@
 			<div class="class1">
 				<blockquote>推荐企业</blockquote>
 				<div class="row">
-				<?php for($i=0;$i<5;$i++):?>
+				<?php foreach($companys as $company):?>
 					<div class="col-sm-3 text-center">
-						<a href="/company/detail/1">
-							<img class="img-responsive" src="/images/hp.png" />
+						<a href="/company/detail/<?php echo $company->id?>" class="company-logo">
+							<img class="" src="<?php echo $company->logo?>" />
 						</a>
-						<p>this is company description</p>
+						<p class="text-center"><?php echo $company->name?></p>
 					</div>
-				<?php endfor;?>
+				<?php endforeach;?>
 				</div>
 			</div>
 			<div class="class2">
@@ -65,7 +64,7 @@
 				<div class="row">
 				<?php for($i=0;$i<6;$i++):?>
 					<div class="col-sm-4">
-						<div class="palette palette-concrete">
+						<div class="palette palette-peter-river">
 							经营管理类（221个职位）
 						</div>
 						<ul class="job-list">

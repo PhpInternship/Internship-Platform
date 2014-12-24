@@ -180,9 +180,9 @@ ul {
 .desc {
 	background-attachment: scroll, fixed;
 	background-image: url("/images/black.png"), url(../images/footer-photo1.jpg);
-	background-position: top left, center center;
+	background-position: center center, center center;
 	background-repeat: repeat, no-repeat;
-	background-size:  auto, cover;
+	background-size:  auto auto, cover;
 	color: rgba(255, 255, 255, 0.8);
 	padding: 10em 0 10em 0;
 	position: relative;
@@ -232,7 +232,7 @@ blockquote {
 	padding:20px 10px;
 }
 .company-logo img{
-	padding: 10px 18px 10px 18px;
+	padding: 10px 18px;
 }
 .company-info .description {
 	margin-top:20px;

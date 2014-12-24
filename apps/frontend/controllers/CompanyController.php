@@ -18,7 +18,8 @@ class CompanyController extends BaseController {
 	 * 首页内容显示
 	 */
 	public function indexAction() {
-		
+		$companys = Companys::find();
+		$this->view->setVar('companys',$companys);
 	}
 	
 	/**
