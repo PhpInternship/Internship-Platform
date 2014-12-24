@@ -177,3 +177,53 @@ ul {
 		float:left;
 	}
 }
+.desc {
+	background-attachment: scroll, fixed;
+	background-image: url("/images/black.png"), url(../images/footer-photo1.jpg);
+	background-position: top left, center center;
+	background-repeat: repeat, no-repeat;
+	background-size:  auto, cover;
+	color: rgba(255, 255, 255, 0.8);
+	padding: 10em 0 10em 0;
+	position: relative;
+	text-align: center;
+	height: 560px;
+}
+.desc .content {
+	background: none repeat scroll 0% 0%;
+}
+.content .btn {
+	box-shadow: none !important;
+	transform: translate3d(0px, 0px, 0px);
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	padding: 10px 20px;
+	font-size: 14px;
+	margin-top:20px;
+}
+blockquote {
+	border-left: 3px solid #1193C6;
+}
+.citys {
+	margin-right:50px;
+}
+.citys small{
+	margin-right:15px;
+}
+.citys .dropdown-menu {
+	min-width:100px;
+}
+.citys .other {
+	cursor:pointer;
+}
+
+.job-list {
+	padding:5px 15px;
+}
+.job-list .job {
+	margin-left:10px;
+	color:#808080;
+}
+.job-list .date {
+	float:right;
+}
