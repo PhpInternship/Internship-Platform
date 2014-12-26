@@ -193,11 +193,13 @@ create table citys(
  * 文章表
  * id 主键
  * title 文章标题
- * authorid 作者
+ * authorid 作者id
  * picture 封面图片
+ * digest 摘要
  * content 文章内容
- * type 文章类型
- * state 文章状态
+ * typeid 文章类型id
+ * tag 标签
+ * state 文章状态(0:待审核,1:已通过审核,2:推荐文章)
  * click 点击量
  * created_at 创建时间
  * updated_at 更新时间
@@ -207,17 +209,37 @@ create table articles(
 	id int not null primary key auto_increment,
 	title varchar(50) not null,
 	authorid int not null,
-	picture varchar(50) int not null,
+	picture varchar(50)  not null,
+	digest varchar(255) not null,
 	content text not null,
-	type tinyint not null,
-	state tinyint not null,
-	click int not null,
+	tag varchar(200) not null,
+	typeid tinyint not null,
+	state tinyint not null default 0,
+	click int not null default 0,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;
+insert into articles(title,authorid,picture,digest,content,tag,typeid,state)
+values('盘点2014：十大最受关注的亚马逊AWS产品',1,'/images/article.jpg','2014年，亚马逊AWS新增了一个新的数据中心Region，推出一个新文档同步和共享服务等等。马上回顾一下这些服务和产品，以下按重要性的倒序列出。','这里是文章内容','互联网&大数据&全球化&产品',1,1);
 
 /*
- * 
+ * 文章类型表
+ * id 主键
+ * name 类型名
+ * created_at 创建时间
+ * updated_at 更新时间
+ */
+drop table if exists article_types;
+create table article_types(
+	id int not null primary key auto_increment,
+	name varchar(20) not null,
+	created_at timestamp not null default current_timestamp,
+	updated_at timestamp not null default '0000-00-00 00:00:00'
+)charset=utf8;
+insert into article_types(name) values('计算机'),('工商管理'),('文学');
+
+/*
+ * 表格模板
  * id 主键
  * created_at 创建时间
  * updated_at 更新时间
