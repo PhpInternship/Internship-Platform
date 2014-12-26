@@ -207,6 +207,7 @@ ul {
 }
 blockquote {
 	border-left: 3px solid #1193C6;
+	margin:15px 2px;
 }
 .citys {
 	margin-right:50px;
@@ -275,4 +276,8 @@ blockquote {
 .digest {
 	text-indent: 2em;
 }
-
+.join {
+	width:100%;
+	height:200px;
+	background-color:#3498db;
+}
