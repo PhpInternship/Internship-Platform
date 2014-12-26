@@ -152,10 +152,11 @@ create table resumes(
  * 7.工作经验记录表 experiences
  * id 主键
  * user_id 用户id
- * company 公司
+ * companyid 公司id
  * start_time 入职时间
  * level_time 离职时间
  * description 对该段时间的工作的评价
+ * company_desc 公司对员工这段时间工作的评价
  * created_at 创建时间
  * updated_at 更新时间
  */
@@ -163,10 +164,11 @@ drop table if exists experiences;
 create table experiences(
 	id int not null primary key auto_increment,
 	user_id int not null,
-	company varchar(50) not null,
+	companyid varchar(50) not null,
 	start_time date not null,
 	level_time date not null,
 	description varchar(255) not null,
+	company_desc varchar(255) not null,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;

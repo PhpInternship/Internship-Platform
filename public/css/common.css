@@ -276,8 +276,9 @@ blockquote {
 .digest {
 	text-indent: 2em;
 }
-.join {
-	width:100%;
-	height:200px;
-	background-color:#3498db;
+.userhead {
+	margin-top:20px;
+}
+.signature p {
+	text-indent: 2em;
 }

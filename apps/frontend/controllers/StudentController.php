@@ -13,9 +13,20 @@ namespace Frontend\Controllers;
  *
  */
 class StudentController extends BaseController {
-	
+	/**
+	 * 首页
+	 */
 	public function indexAction() {
 		
 	}
+	
+	/**
+	 * 个人中心
+	 */
+	public function homeAction() {
+		
+	}
+	
+	
 	
 }
