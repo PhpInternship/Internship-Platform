@@ -362,3 +362,7 @@ blockquote {
 .message {
 	margin-top:10px;
 }
+.state {
+	position: relative;
+	float:right;
+}

@@ -27,6 +27,13 @@ class StudentController extends BaseController {
 		
 	}
 	
+	/**
+	 * 学生信息
+	 */
+	public function infoAction() {
+		$id = $this->dispatcher->getParam(0,'int');
+	}
+	
 	
 	
 }
