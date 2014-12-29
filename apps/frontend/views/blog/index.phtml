@@ -2,79 +2,87 @@
 	<div class="container content">
 		<div class="row">
 			<div class="col-sm-3">
-				<div class="tile">
-					<img src="/images/icons/svg/chat.svg" alt="Compas"
-						class="tile-image big-illustration">
-					<p>欢迎来到我们的博客.</p>
-					<a class="btn btn-primary btn-large btn-block" href="/login">我也加入</a>
+				<div class="contents">
+					<div class="tile">
+						<img src="/images/icons/svg/chat.svg" alt="Compas"
+							class="tile-image big-illustration">
+						<p>欢迎来到我们的博客.</p>
+						<?php if($this->session->has('id')):?>
+						<a class="btn btn-info btn-large btn-block" href="/blog/write">发表文章</a>
+						<?php else:?>
+						<a class="btn btn-primary btn-large btn-block" href="/login">我也加入</a>
+						
+						<?php endif;?>
+					</div>
+					<hr>
+					<!-- 文章分类导航 -->
 				</div>
-				<hr>
-				<!-- 文章分类导航 -->
 			</div>
 			<div class="col-sm-9">
-				<h6>推荐文章</h6>
-				<hr>
-				<div class="row recommend-article">
-					<div class="col-sm-8 picture">
-						<a href="#"><img src="/images/article.jpg"></a>
-					</div>
-					<div class="col-sm-4">
-						<p>
-							<a href="">this is title</a>
-						</p>
-						this is content
-					</div>
-				</div>
-				<div class="row sort">
-					<div class="col-sm-12">
-						<small class="left text-primary">按时间排序</small> <small
-							class="other right">
-							<div class="btn-group">
-								<a class="text-primary" data-toggle="dropdown">其他<span
-									class="caret"></span></a>
-								<ul class="dropdown-menu " role="menu">
-									<li><a href="#">时间</a></li>
-									<li><a href="#">点击量</a></li>
-									<li><a href="#">收藏数</a></li>
-								</ul>
-
-							</div>
-						</small>
-					</div>
-
-				</div>
-				<hr>
-				<?php foreach ($articles as $article):?>
-				<div class="row artiles-list">
-					<div class="col-sm-4 picture">
-						<a href="/blog/article/<?php echo $article->id?>"><img
-							src="/images/article.jpg"></a>
-					</div>
-					<div class="col-sm-8">
-						<strong><a href="/blog/article/<?php echo $article->id?>"
-							class="text-info"><?php echo $article->title?></a></strong>
-						<div>
-							<small><?php echo $article->digest?></small>
+				<div class="contents">
+					<h6>推荐文章</h6>
+					<hr>
+					<div class="row recommend-article">
+						<div class="col-sm-8 picture">
+							<a href="#"><img src="/images/article.jpg"></a>
 						</div>
-						<div>
-							<div class="bootstrap-tagsinput">
-								<span class="tag label label-info">互联网<span data-role="remove"></span></span>
-								<span class="tag label label-info"> 大数据<span data-role="remove"></span></span>
-								<span class="tag label label-info"> 全球化<span data-role="remove"></span></span>
-								<span class="tag label label-info"> 产品<span data-role="remove"></span></span>
-							</div>
+						<div class="col-sm-4">
+							<p>
+								<a href="">this is title</a>
+							</p>
+							this is content
 						</div>
 					</div>
-				</div>
-				<?php endforeach;?>
-				<nav>
-					<ul class="pager">
-						<li class="previous"><a href="#"><i class="icon-chevron-left"></i>
-								上一页</a></li>
-						<li class="next"><a href="#">下一页 <i class="icon-chevron-right"></i></a></li>
-					</ul>
-				</nav>
+					<div class="row sort">
+						<div class="col-sm-12">
+							<small class="left text-primary">按时间排序</small> <small
+								class="other right">
+								<div class="btn-group">
+									<a class="text-primary" data-toggle="dropdown">其他<span
+										class="caret"></span></a>
+									<ul class="dropdown-menu " role="menu">
+										<li><a href="#">时间</a></li>
+										<li><a href="#">点击量</a></li>
+										<li><a href="#">收藏数</a></li>
+									</ul>
 
+								</div>
+							</small>
+						</div>
+
+					</div>
+					<hr>
+					<?php foreach ($articles as $article):?>
+					<div class="row artiles-list">
+						<div class="col-sm-4 picture">
+							<a href="/blog/article/<?php echo $article->id?>"><img
+								src="/images/article.jpg"></a>
+						</div>
+						<div class="col-sm-8">
+							<strong><a href="/blog/article/<?php echo $article->id?>"
+								class="text-info"><?php echo $article->title?></a></strong>
+							<div>
+								<small><?php echo $article->digest?></small>
+							</div>
+							<div>
+								<div class="bootstrap-tagsinput">
+									<span class="tag label label-info">互联网<span data-role="remove"></span></span>
+									<span class="tag label label-info"> 大数据<span data-role="remove"></span></span>
+									<span class="tag label label-info"> 全球化<span data-role="remove"></span></span>
+									<span class="tag label label-info"> 产品<span data-role="remove"></span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php endforeach;?>
+					<nav>
+						<ul class="pager">
+							<li class="previous"><a href="#"><i class="icon-chevron-left"></i>
+									上一页</a></li>
+							<li class="next"><a href="#">下一页 <i class="icon-chevron-right"></i></a></li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 

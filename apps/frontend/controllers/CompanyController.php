@@ -33,5 +33,12 @@ class CompanyController extends BaseController {
 		$this->view->setVar('company',$company);
 	}
 	
+	/**
+	 * 工作详情
+	 */
+	public function jobAction() {
+		$id = $this->dispatcher->getParam(0,'int');
+	}
+	
 	
 }

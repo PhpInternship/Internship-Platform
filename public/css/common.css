@@ -172,6 +172,12 @@ ul {
 .main {
 	margin-top: 51px;
 }
+
+.contents {
+	padding:5px 15px;
+	background-color: #fff;
+	border-radius:5px;
+}
 @media screen and (max-width: 800px) {
 	.footer {
 		height:420px;
@@ -281,4 +287,78 @@ blockquote {
 }
 .signature p {
 	text-indent: 2em;
+}
+.job {
+	background-color: #F0F0F0;
+}
+.job-info {
+	padding-top:50px;
+	
+}
+.job-desc {
+	padding:0px 20px 20px 20px;
+}
+.salary {
+	color:#FF7F00;
+}
+.job-desc p span {
+	padding:0px 5px;
+}
+.job-desc .date {
+	padding:0px 5px;
+}
+.job-desc .description {
+	text-indent: 2em;
+}
+.base-info {
+	padding:0px 10px 10px 10px;
+}
+.address {
+	color:#2980b9;
+	padding:0px 5px;
+}
+.department {
+	color:#e67e22;
+	padding:0px 5px;
+}
+.job-description {
+	padding-left:10px;
+}
+.job-condition {
+	padding-left:10px;
+}
+.key {
+	color:#999;
+}
+.job-info .company {
+	text-indent: 2em;
+	font-size:14px;
+}
+.intent-btn {
+	margin-top:15px;
+}
+.indent {
+	text-indent:2em;
+}
+.talk {
+	background-color: #C2E2F2;
+	text-indent:1em;
+	padding:5px 5px;
+	border-radius: 5px;
+	position:relative;
+}
+.talk span{
+	display: inline-block;
+	position: absolute;
+	left: -8px;
+	top: 10px;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid #C2E2F2;
+}
+.talk p {
+	font-size:13px;
+}
+.message {
+	margin-top:10px;
 }
