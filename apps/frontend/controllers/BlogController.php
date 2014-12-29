@@ -37,4 +37,11 @@ class BlogController extends BaseController {
 		$this->view->setVar('article',$article);
 	}
 	
+	/**
+	 * 发表文章
+	 */
+	public function writeAction() {
+		
+	}
+	
 }
