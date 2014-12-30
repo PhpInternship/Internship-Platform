@@ -60,38 +60,21 @@
 						</p>
 						<hr>
 						<blockquote>发布工作：</blockquote>
-						<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>岗位名称</th>
-									<th>所属公司</th>
-									<th>就职地点</th>
-									<th>发布时间</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php for($i=1;$i<4;$i++):?>
-								<tr>
-									<td><?php echo $i?></td>
-									<td>PHP工程师</td>
-									<td>惠普科技有限公司</td>
-									<td>北京</td>
-									<td>2014-12-30</td>
-									<td>
-										<a href="#" type="button" class="btn btn-info btn-xs">查看</a>
-										<a href="#" type="button" class="btn btn-success btn-xs">修改</a>
-										<a href="#" type="button" class="btn btn-danger btn-xs">删除</a>
-									</td>
-								</tr>
-								<?php endfor;?>
-							</tbody>
-						</table>
+						<div class="row">
+						<?php for($i=1;$i<5;$i++):?>
+							<div class="col-sm-4 text-center">
+								<h5 >PHP工程师</h5>
+								<small>惠普科技有限公司</small>
+								<p><small>投递数：3人</small> | <small>2014-12-30</small></p>
+								<p><a href="" type="button" class="btn btn-info btn-xs">查看详情</a></p>
+							</div>
+						<?php endfor;?>
+						</div>
 						<p class="text-center add-company">
 							<a href="" type="button" class="btn btn-primary btn-embossed"><span
 								class="fui-plus"></span> 发布新工作</a>
 						</p>
+						<hr>
 					</div>
 				</div>
 			</div>
