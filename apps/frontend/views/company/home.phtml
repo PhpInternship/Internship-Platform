@@ -1,0 +1,102 @@
+<div class="main">
+	<div class="container">
+
+		<div class="userhead">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="userinfo text-center">
+						<img src="/images/icons/svg/loop.svg">
+						<h6><?php echo $manager->username?></h6>
+						<a class="btn btn-success btn-large btn-block"
+							href="/student/edit"><span class="fui-new"></span> 编辑信息</a>
+					</div>
+					<hr>
+					<div class="articles">
+						<blockquote>最新消息：</blockquote>
+						<div class="list-group">
+							<a href="#" class="list-group-item"> <img
+								src="/images/icons/svg/loop.svg" width="50"> Ubuntu
+							</a> <a href="#" class="list-group-item"> <img
+								src="/images/icons/svg/loop.svg" width="50"> Hongker
+							</a> <a href="#" class="list-group-item"> <img
+								src="/images/icons/svg/loop.svg" width="50"> Others
+							</a>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-9">
+					<div class="userinfo">
+						<blockquote>个人基本信息：</blockquote>
+
+						<div class="row">
+							<div class="col-sm-4">姓名：<?php echo $manager->username?></div>
+							<div class="col-sm-8 col-xs-12">身份证号：<?php echo $manager->id_card_no?></div>
+							<div class="col-sm-3 col-xs-6">年龄：<?php echo $manager->age?></div>
+							<div class="col-sm-3 col-xs-6">性别：<?php echo $manager->sex?></div>
+							<div class="col-sm-6">邮箱：<?php echo $manager->email?></div>
+							<div class="col-sm-12">电话：<?php echo $manager->tel?></div>
+						</div>
+						<hr>
+						<blockquote>公司列表：</blockquote>
+						<div class="row">
+						<?php foreach($companys as $company):?>
+							<div class="col-sm-4 text-center">
+								<a href="/company/detail/<?php echo $company->id?>"
+									class="company-logo"> <img class=""
+									src="<?php echo $company->logo?>" />
+								</a>
+								<p class="text-center"><?php echo $company->name?></p>
+								<div>
+									<a href="" type="button" class="btn btn-info btn-sm">查看详情</a>&nbsp;&nbsp;&nbsp;
+									<a href="" type="button" class="btn btn-primary btn-sm">修改信息</a>
+								</div>
+							</div>
+						<?php endforeach;?>
+						</div>
+						<p class="text-center add-company">
+							<a href="" type="button" class="btn btn-warning btn-embossed"><span
+								class="fui-plus"></span> 添加公司</a>
+						</p>
+						<hr>
+						<blockquote>发布工作：</blockquote>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>岗位名称</th>
+									<th>所属公司</th>
+									<th>就职地点</th>
+									<th>发布时间</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php for($i=1;$i<4;$i++):?>
+								<tr>
+									<td><?php echo $i?></td>
+									<td>PHP工程师</td>
+									<td>惠普科技有限公司</td>
+									<td>北京</td>
+									<td>2014-12-30</td>
+									<td>
+										<a href="#" type="button" class="btn btn-info btn-xs">查看</a>
+										<a href="#" type="button" class="btn btn-success btn-xs">修改</a>
+										<a href="#" type="button" class="btn btn-danger btn-xs">删除</a>
+									</td>
+								</tr>
+								<?php endfor;?>
+							</tbody>
+						</table>
+						<p class="text-center add-company">
+							<a href="" type="button" class="btn btn-primary btn-embossed"><span
+								class="fui-plus"></span> 发布新工作</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+

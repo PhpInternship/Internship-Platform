@@ -379,3 +379,9 @@ blockquote {
 .intentions li .label{
 	margin-left:20px;
 }
+.add-company {
+	margin:20px;
+}
+.add-company .btn {
+	padding:15px 40px;
+}

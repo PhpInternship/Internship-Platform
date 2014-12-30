@@ -2,6 +2,7 @@
 namespace Frontend\Controllers;
 
 use Models\Companys;
+use Models\Managers;
 /**
  * 简述：公司模块。
  * 
@@ -49,6 +50,19 @@ class CompanyController extends BaseController {
 		$company = Companys::findFirst($id);
 		
 		$this->view->setVar('company',$company);
+	}
+	
+	/**
+	 * 企业中心
+	 */
+	public function homeAction() {
+		$id = $this->session->get('id');
+		
+		$manager = Managers::findFirst($id);
+		$companys = $manager->getCompanys();
+		
+		$this->view->setVar('companys',$companys);
+		$this->view->setVar('manager',$manager);
 	}
 	
 	

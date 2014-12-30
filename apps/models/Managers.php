@@ -21,7 +21,7 @@ class Managers extends Base {
 	 	$this->skipAttributesOnUpdate(array('created_at'));
 	 	
 	 	//关联
-	 	$this->hasMany('id', 'Models\Companys', 'city', array(
+	 	$this->hasMany('id', 'Models\Companys', 'manager', array(
 	 			'alias' => 'Companys'
 	 	));
 	 }

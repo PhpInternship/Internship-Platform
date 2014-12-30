@@ -15,5 +15,8 @@ class Companys extends Base {
 	 	$this->belongsTo('city', 'Models\Citys', 'id', array(
 	 			'alias' => 'Citys'
 	 	));
+	 	$this->belongsTo('manager', 'Models\Managers', 'id', array(
+	 			'alias' => 'Managers'
+	 	));
 	 }
 }

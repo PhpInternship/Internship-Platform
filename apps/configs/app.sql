@@ -46,6 +46,7 @@ insert into users(username,email,sex) values('hongker','xiaok@qq.com','男');
 /*
  * 3.公司信息表 companys
  * id 主键
+ * manager 企业管理者
  * name 公司名称
  * logo 公司logo
  * city 城市id
@@ -61,6 +62,7 @@ insert into users(username,email,sex) values('hongker','xiaok@qq.com','男');
 drop table if exists companys;
 create table companys(
 	id int not null primary key auto_increment,
+	manager int not null,
 	name varchar(50) not null,
 	logo varchar(100) not null,
 	city int not null,
@@ -71,12 +73,14 @@ create table companys(
 	state tinyint not null,
 	description varchar(255) not null,
 	created_at timestamp not null default current_timestamp,
-	updated_at timestamp not null default '0000-00-00 00:00:00'
+	updated_at timestamp not null default '0000-00-00 00:00:00',
+	key city (city),
+	key manager (manager)
 )charset=utf8;
-insert into companys(name,logo,city,address,type,field,tel,state,description)
-values('惠普科技有限公司','/images/hp.png',1,'北京市朝阳区建国路112号中国惠普大厦(近招商局大厦)','外企','互联网','18728400401',1,'惠普（HP）公司成立于1939年，是一家业务运营遍及全球170多个国家和地区的高科技公司。我们致力于探索科技和服务如何帮助人们和企业解决其遇到的问题和挑战，并把握机遇、实现愿景、成就梦想。我们运用新的思想和理念来打造更简单、更有价值、更值得信赖的技术体验，不断帮助客户改善其生活和工作方式。'),
-('万科企业股份有限公司','/images/wanke.png',1,'深圳市盐田区大梅沙环梅路33号万科中心','民企','房地产，互联网','18728400402',1,'万科企业股份有限公司成立于1984年，1988年进入房地产行业，1991年成为深圳证券交易所第二家上市公司。经过二十多年的发展，成为国内最大的住宅开发企业，目前业务覆盖珠三角、长三角、环渤海三大城市经济圈以及中西部地区，共计53个大中城市。近三年来，年均住宅销售规模在6万套以上，2011年公司实现销售面积1075万平米，销售金额1215亿元，2012年销售额超过1400亿。销售规模持续居全球同行业首位。')
-,('中国光大银行股份有限公司','/images/guangda.png',1,'北京市西城区太平桥大街25号中国光大中心','国企','金融','18728400403',1,'中国光大银行成立于1992年8月，1997年1月完成股份制改造，成为国内第一家国有控股并有国际金融组织参股的全国性股份制商业银行。已在全国27个省、自治区、直辖市的60多个经济中心城市以及香港特别行政区拥有分支机构600多家。')
+insert into companys(manager,name,logo,city,address,type,field,tel,state,description)
+values(1,'惠普科技有限公司','/images/hp.png',1,'北京市朝阳区建国路112号中国惠普大厦(近招商局大厦)','外企','互联网','18728400401',1,'惠普（HP）公司成立于1939年，是一家业务运营遍及全球170多个国家和地区的高科技公司。我们致力于探索科技和服务如何帮助人们和企业解决其遇到的问题和挑战，并把握机遇、实现愿景、成就梦想。我们运用新的思想和理念来打造更简单、更有价值、更值得信赖的技术体验，不断帮助客户改善其生活和工作方式。'),
+(1,'万科企业股份有限公司','/images/wanke.png',1,'深圳市盐田区大梅沙环梅路33号万科中心','民企','房地产，互联网','18728400402',1,'万科企业股份有限公司成立于1984年，1988年进入房地产行业，1991年成为深圳证券交易所第二家上市公司。经过二十多年的发展，成为国内最大的住宅开发企业，目前业务覆盖珠三角、长三角、环渤海三大城市经济圈以及中西部地区，共计53个大中城市。近三年来，年均住宅销售规模在6万套以上，2011年公司实现销售面积1075万平米，销售金额1215亿元，2012年销售额超过1400亿。销售规模持续居全球同行业首位。')
+,(1,'中国光大银行股份有限公司','/images/guangda.png',1,'北京市西城区太平桥大街25号中国光大中心','国企','金融','18728400403',1,'中国光大银行成立于1992年8月，1997年1月完成股份制改造，成为国内第一家国有控股并有国际金融组织参股的全国性股份制商业银行。已在全国27个省、自治区、直辖市的60多个经济中心城市以及香港特别行政区拥有分支机构600多家。')
 ;
 /*
  * 4.实习工作表 jobs
@@ -258,6 +262,8 @@ drop table if exists company_manager;
 create table company_manager(
 	id int not null primary key auto_increment,
 	username varchar(30) not null,
+	age tinyint not null,
+	sex char(1) not null,
 	email varchar(30) not null,
 	true_name varchar(20) not null default '',
 	id_card_no char(18) not null,
@@ -265,7 +271,8 @@ create table company_manager(
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;
-
+insert into company_manager(username,age,sex,email,true_name,id_card_no,tel)
+values('company1',20,'男','company1@qq.com','马云','511621196501012987','15928173458');
 
 /*
  * 留言表
