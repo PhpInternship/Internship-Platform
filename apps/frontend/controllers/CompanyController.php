@@ -40,5 +40,16 @@ class CompanyController extends BaseController {
 		$id = $this->dispatcher->getParam(0,'int');
 	}
 	
+	/**
+	 * 投递意愿
+	 */
+	public function intentAction() {
+		$id = $this->dispatcher->getParam(0,'int');
+		
+		$company = Companys::findFirst($id);
+		
+		$this->view->setVar('company',$company);
+	}
+	
 	
 }

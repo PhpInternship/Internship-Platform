@@ -125,6 +125,7 @@ create table intentions(
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;
+
 /*
  * 6.学生简历表 resumes
  * id 主键
