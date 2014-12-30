@@ -60,6 +60,7 @@ hr {
 .register .login-form {
 	max-width: 330px;
 	margin: 30px auto;
+	background-color: #fff;
 }
 
 .footer {
@@ -374,4 +375,7 @@ blockquote {
 }
 .italic {
 	font-style:italic;
+}
+.intentions li .label{
+	margin-left:20px;
 }

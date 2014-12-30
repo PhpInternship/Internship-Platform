@@ -20,7 +20,11 @@
                   <a href="#" class="dropdown-toggle active" data-toggle="dropdown"><?php echo $this->session->get('username')?> <b class="caret"></b></a>
                   <span class="dropdown-arrow"></span>
                   <ul class="dropdown-menu">
-                    <li><a href="#">个人信息</a></li>
+                  	<?php if($this->session->get('type')==0):?>
+                    <li><a href="/student/home">个人中心</a></li>
+                    <?php elseif($this->session->get('type')==1):?>
+                    <li><a href="/company/home">企业中心</a></li>
+                    <?php endif;?>
                     <li class="divider"></li>
                     <li><a href="/login/logout">退 出</a></li>
                   </ul>

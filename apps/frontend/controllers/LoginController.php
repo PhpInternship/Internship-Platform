@@ -33,10 +33,23 @@ class LoginController extends \Phalcon\Mvc\Controller {
                 $username = $this->request->getPost('name','string');
                 
                 if($this->_checkUser($username,$password)) {
-                	$user = Users::findFirst("username='$username'");
-                	$this->session->set('id',$user->id); //将用户id存入session
-                	$this->session->set('username',$user->username); //用户名
-                	$this->response->redirect('/index',true);
+                	$type = $this->_getUserType($username);
+                	
+	                if($type==0) {
+						//普通用户
+	                	$user = Users::findFirst("username='$username'");
+	                	$this->session->set('id',$user->id); //将用户id存入session
+	                	$this->session->set('username',$user->username); //用户名
+	                	$this->response->redirect('/index',true);
+					}elseif($type==1) {
+						//企业用户
+						
+						return '企业';
+					}elseif($type==2) {
+						//管理员
+						return '管理';
+					}
+                	
                 	
                 	//跳转
                 }else {
@@ -54,6 +67,7 @@ class LoginController extends \Phalcon\Mvc\Controller {
             }
         }
 	}
+	
 	
 	
 	/**
@@ -79,11 +93,10 @@ class LoginController extends \Phalcon\Mvc\Controller {
 	/**
 	 * 检测用户是否存在
 	 * @param unknown $username 用户名
-	 * @param unknown $password 密码
 	 * @return boolean 存在返回true,否则返回false
 	 */
 	private function _checkUserExist($username) {
-		if(Users::findFirst("username='$username'")) {
+		if(Passwords::findFirst("username='$username'")) {
 			return true;
 		}
 		
@@ -105,6 +118,15 @@ class LoginController extends \Phalcon\Mvc\Controller {
 		
 		return false;
 		
+	}
+	
+	/**
+	 * 查看用户类型
+	 * @param unknown $username 用户名
+	 * @return int 返回用户类型
+	 */
+	private function _getUserType($username) {
+		return Passwords::findFirst("username='$username'")->type;
 	}
 	
 	/**

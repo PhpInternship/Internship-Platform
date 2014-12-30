@@ -2,12 +2,14 @@
  * 1.密码表 passwords
  * username 用户名
  * password 密码
+ * type 用户类型（0:普通学生用户,1:企业联系人,2:管理员）
  * created_at 创建时间
  */
 drop table if exists passwords;
 create table passwords(
 	username varchar(20) not null,
 	password char(60) not null,
+	type tinyint not null default 0,
 	updated_at timestamp on update CURRENT_TIMESTAMP not null default CURRENT_TIMESTAMP
 )charset=utf8;
 insert into passwords(username,password) 
@@ -240,6 +242,49 @@ create table article_types(
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;
 insert into article_types(name) values('计算机'),('工商管理'),('文学');
+
+/*
+ * 企业管理人
+ * id 主键
+ * username 用户名
+ * email 邮箱
+ * true_name 真实姓名
+ * id_card_no 身份证号
+ * tel 联系电话
+ * created_at 创建时间
+ * updated_at 更新时间
+ */
+drop table if exists company_manager;
+create table company_manager(
+	id int not null primary key auto_increment,
+	username varchar(30) not null,
+	email varchar(30) not null,
+	true_name varchar(20) not null default '',
+	id_card_no char(18) not null,
+	tel char(11) not null,
+	created_at timestamp not null default current_timestamp,
+	updated_at timestamp not null default '0000-00-00 00:00:00'
+)charset=utf8;
+
+
+/*
+ * 留言表
+ * id 主键
+ * user_id 留言者id
+ * target_id 留言目标id
+ * content 留言内容
+ * created_at 创建时间
+ * updated_at 更新时间
+ */
+drop table if exists messages;
+create table tables(
+	id int not null primary key auto_increment,
+	user_id int not null,
+	target_id int not null,
+	content varchar(255) not null,
+	created_at timestamp not null default current_timestamp,
+	updated_at timestamp not null default '0000-00-00 00:00:00'
+)charset=utf8;
 
 /*
  * 表格模板

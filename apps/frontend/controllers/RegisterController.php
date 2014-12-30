@@ -3,6 +3,7 @@ namespace Frontend\Controllers;
 
 use Models\Users;
 use Models\Passwords;
+use Models\Managers;
 /**
  * 简述：用户注册模块。
  * 
@@ -23,9 +24,9 @@ class RegisterController extends BaseController {
 	}
 	
 	/**
-	 * 接收表单数据，注册
+	 * 接收学生注册表单数据，注册
 	 */
-	public function addAction() {
+	public function addStudentAction() {
 		if($this->request->isPost()) {
 			if ($this->security->checkToken()) {
 				$username = $this->request->getPost('name','string');
@@ -35,6 +36,7 @@ class RegisterController extends BaseController {
 				if($this->_checkUser($username)&&$this->_checkPass($password)&&$this->_addUser($username, $email, $password)) {
 					$user = Users::findFirst("username='$username'");
 					$this->session->set('id',$user->id); //将用户id存入session
+					$this->session->set('type',0);
 					$this->session->set('username',$user->username); //用户名
 					$this->response->redirect('/index',true);
 				}else {
@@ -51,6 +53,37 @@ class RegisterController extends BaseController {
 	}
 	
 	/**
+	 * 接收企业管理人注册表单数据，注册
+	 */
+	public function addManagerAction() {
+		if($this->request->isPost()) {
+			if ($this->security->checkToken()) {
+				$username = $this->request->getPost('name','string');
+				$email = $this->request->getPost('email','email');
+				$password = $this->request->getPost('pass','string');
+	
+				if($this->_checkUser($username)&&$this->_checkPass($password)&&$this->_addManager($username, $email, $password)) {
+					$manager = Managers::findFirst("username='$username'");
+					$this->session->set('id',$manager->id); //将用户id存入session
+					$this->session->set('type',1);
+					$this->session->set('username',$manager->username); //用户名
+					$this->response->redirect('/index',true);
+				}else {
+					$this->response->redirect('/register',true);
+				}
+	
+			}else {
+				$this->flashSession->error("请勿重复注册");
+				 
+				$this->response->redirect('/register',true);
+			}
+	
+		}
+	}
+	
+	
+	
+	/**
 	 * 检测用户名
 	 * @param string $username 用户名
 	 * @return boolean 合格返回true，否则返回false
@@ -63,7 +96,7 @@ class RegisterController extends BaseController {
 			return false;
 		}else {
 			//检查用户名是否存在
-			$user = Users::findFirst("username='$username'");
+			$user = Passwords::findFirst("username='$username'");
 			
 			if($user) {
 				$this->flashSession->error("该用户名已被使用，请重新选择一个用户名");
@@ -91,7 +124,7 @@ class RegisterController extends BaseController {
 	}
 	
 	/**
-	 * 添加用户
+	 * 添加学生用户
 	 * @param string $username
 	 * @param email $email
 	 * @param string $password
@@ -103,7 +136,30 @@ class RegisterController extends BaseController {
 		$user->email = $email;
 		
 		if($user->save()) {
-			if($this->_addPass($username, $password)) {
+			if($this->_addPass($username, $password,1)) {
+				return true;
+			}
+		}else {
+			$this->flashSession->error("创建用户失败，请稍后再试");
+		}
+		
+		return false;
+	}
+	
+	/**
+	 * 添加企业用户
+	 * @param unknown $username
+	 * @param unknown $email
+	 * @param unknown $password
+	 * @return boolean 成功返回true,否则返回false
+	 */
+	private function _addManager($username,$email,$password) {
+		$manager = new Managers();
+		$manager->username = $username;
+		$manager->email = $email;
+
+		if($manager->save()) {
+			if($this->_addPass($username, $password,2)) {
 				return true;
 			}
 		}else {
@@ -117,13 +173,14 @@ class RegisterController extends BaseController {
 	 * 记录密码
 	 * @param string $username
 	 * @param string $password
+	 * @param int $type 用户类型
 	 * @return boolean 成功返回true,否则返回false
 	 */
-	private function _addPass($username,$password) {
+	private function _addPass($username,$password,$type) {
 		$pass = new Passwords();
 		$pass->username = $username;
 		$pass->password = $this->security->hash($password);
-		
+		$pass->type = $type;
 		if($pass->save()) {
 			return true;
 		}else {
