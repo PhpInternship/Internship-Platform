@@ -61,6 +61,11 @@
 						<div class="col-sm-8">
 							<strong><a href="/blog/article/<?php echo $article->id?>"
 								class="text-info"><?php echo $article->title?></a></strong>
+							<div class="italic article-footer">
+								<small>作者：<strong class="text-primary"><?php echo $article->getUsers()->username?></strong></small>
+								<small>发布时间：<strong class="text-danger"><?php echo substr($article->created_at,0,10)?></strong></small>
+							</div>
+							
 							<div>
 								<small><?php echo $article->digest?></small>
 							</div>

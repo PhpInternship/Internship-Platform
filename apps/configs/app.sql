@@ -187,7 +187,7 @@ create table citys(
 	id int not null primary key auto_increment,
 	city varchar(20) not null,
 	province varchar(20) not null,
-	type varchar(20) not null,
+	create_at timestamp not null default current_timestamp,
 	key city(city)
 )charset=utf8;
 

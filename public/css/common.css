@@ -259,6 +259,9 @@ blockquote {
 	display: block;
 	width:100%;
 }
+.article-footer small{
+	padding:2px 10px;
+}
 .picture a img {
 	width:100%;
 }
@@ -365,4 +368,10 @@ blockquote {
 .state {
 	position: relative;
 	float:right;
+}
+#edui-container {
+	width:100%;
+}
+.italic {
+	font-style:italic;
 }

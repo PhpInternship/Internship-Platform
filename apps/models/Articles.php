@@ -10,5 +10,9 @@ class Articles extends Base {
 	 	
 	 	//Skips only when updating
 	 	$this->skipAttributesOnUpdate(array('created_at'));
+	 	
+	 	$this->belongsTo('authorid', 'Models\Users', 'id', array(
+	 			'alias' => 'Users'
+	 	));
 	 }
 }
