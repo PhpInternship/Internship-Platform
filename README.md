@@ -40,5 +40,31 @@ Internship-Platform
   
   发布
   
+  开发要求与规范：
+  
+	命名格式： 尽量使用驼峰法命名
+	
+		控制器： LoginController.php
+		
+		Action： viewAction
+		
+		模型： Users.php
+		
+		视图： view.phtml
+		
+		变量： $userinfo
+		
+	开发要求：
+	
+		对php熟悉，对phalcon有了解。
+		
+		对html5,css3感兴趣的。
+		
+		对bootstrap有兴趣的。。
+		
+		
+		
   welcome to our team,we need you!!!
   
+
+		
