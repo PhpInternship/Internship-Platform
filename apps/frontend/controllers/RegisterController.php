@@ -136,7 +136,7 @@ class RegisterController extends BaseController {
 		$user->email = $email;
 		
 		if($user->save()) {
-			if($this->_addPass($username, $password,1)) {
+			if($this->_addPass($username, $password,0)) {
 				return true;
 			}
 		}else {
@@ -159,7 +159,7 @@ class RegisterController extends BaseController {
 		$manager->email = $email;
 
 		if($manager->save()) {
-			if($this->_addPass($username, $password,2)) {
+			if($this->_addPass($username, $password,1)) {
 				return true;
 			}
 		}else {
