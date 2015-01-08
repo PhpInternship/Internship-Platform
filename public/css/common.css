@@ -385,3 +385,7 @@ blockquote {
 .add-company .btn {
 	padding:15px 40px;
 }
+.form-horizontal .form-control-static {
+	padding-top:3px;
+	padding-bottom:3px;
+}

@@ -38,7 +38,14 @@ class RegisterController extends BaseController {
 					$this->session->set('id',$user->id); //将用户id存入session
 					$this->session->set('type',0);
 					$this->session->set('username',$user->username); //用户名
-					$this->response->redirect('/index',true);
+					
+					//刚注册的用户需要完善信息
+					if($user->update_at == '0000-00-00 00:00:00') {
+						$this->response->redirect('/student/writeInfo',true);
+					}else {
+						$this->response->redirect('/index',true);
+					}
+					
 				}else {
 					$this->response->redirect('/register',true);
 				}
