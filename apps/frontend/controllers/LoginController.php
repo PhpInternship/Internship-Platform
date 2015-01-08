@@ -3,6 +3,7 @@ namespace Frontend\Controllers;
 
 use Models\Passwords;
 use Models\Users;
+use Models\Managers;
 /**
  * 简述：登录模块。
  * 
@@ -48,8 +49,10 @@ class LoginController extends \Phalcon\Mvc\Controller {
 	                	$this->response->redirect('/index',true);
 					}elseif($type==1) {
 						//企业用户
-						
-						return '企业';
+						$manager = Managers::findFirst("username='$username'");
+						$this->session->set('id',$manager->id); //将用户id存入session
+						$this->session->set('username',$manager->username); //用户名
+						$this->response->redirect('/index',true);		
 					}elseif($type==2) {
 						//管理员
 						return '管理';
