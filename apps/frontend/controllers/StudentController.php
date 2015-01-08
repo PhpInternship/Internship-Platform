@@ -15,6 +15,14 @@ use Models\Users;
  */
 class StudentController extends BaseController {
 	/**
+	 * (首页模块)
+	 * @see \Frontend\Controllers\BaseController::initialize()
+	 */
+	protected function initialize() {
+		parent::initialize();
+		\Phalcon\Tag::appendTitle('学生');
+	}
+	/**
 	 * 首页
 	 */
 	public function indexAction() {

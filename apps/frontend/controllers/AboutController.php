@@ -15,6 +15,14 @@ use Models\Articles;
  */
 class AboutController extends BaseController {
 	/**
+	 * (首页模块)
+	 * @see \Frontend\Controllers\BaseController::initialize()
+	 */
+	protected function initialize() {
+		parent::initialize();
+		\Phalcon\Tag::appendTitle('关于我们');
+	}
+	/**
 	 * 首页
 	 */
 	public function indexAction() {
