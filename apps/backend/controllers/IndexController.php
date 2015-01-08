@@ -13,6 +13,16 @@ namespace Backend\Controllers;
  *
  */
 class IndexController extends BaseController {
+	
+	/**
+	 * (首页模块)
+	 * @see \Backend\Controllers\BaseController::initialize()
+	 */
+	protected function initialize() {
+		parent::initialize();
+		\Phalcon\Tag::appendTitle('后台首页');
+	}
+	
 	public function indexAction() {
 		echo 'hello';
 	}

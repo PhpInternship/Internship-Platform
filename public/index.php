@@ -20,6 +20,18 @@ $di->set ( 'router', function () {
 			'action' => 'index' 
 	) );
 	
+	$router->add ( "/admin/:controller", array (
+			'module' => 'backend',
+			'controller' => 1,
+			'action' => 'index'
+	) );
+	
+	$router->add ( "/admin/:controller/:action", array (
+			'module' => 'backend',
+			'controller' => 1,
+			'action' => 2
+	) );
+	
 	return $router;
 } );
 // 设置数据库连接
