@@ -1,0 +1,93 @@
+<div class="main">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="page-header text-center">完善个人信息</div>
+
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+						<label for="username" class="col-sm-2 control-label">用户名：</label>
+						<div class="col-sm-4">
+							<p class="form-control-static">hongker</p>
+						</div>
+						<label for="username" class="col-sm-2 control-label">邮箱：</label>
+						<div class="col-sm-4">
+							<p class="form-control-static">hongker@qq.com</p>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label">性别：</label>
+						<div class="col-sm-4">
+							<label class="radio"> <input class="custom-radio" name="sex"
+								value="男" data-toggle="radio" type="radio" checked="true"> <span
+								class="icons"> <span class="icon-unchecked"></span> <span
+									class="icon-checked"></span>
+							</span> 男
+							</label> <label class="radio"> <input class="custom-radio"
+								name="sex" value="女" data-toggle="radio" type="radio"><span
+								class="icons"><span class="icon-unchecked"></span><span
+									class="icon-checked"></span></span> 女
+							</label>
+						</div>
+						<label for="inputEmail3" class="col-sm-2 control-label">生日：</label>
+						<div class="col-sm-4">
+							<input size="16" type="text" placeholder="请选择你的生日"
+								data-date="1990-01-01"  class="form_datetime">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">学校：</label>
+						<div class="col-sm-4">
+							<input class="form-control input-sm" name="school"
+								placeholder="请填入你的学校名称" type="text" />
+						</div>
+						<label for="" class="col-sm-2 control-label">毕业时间：</label>
+						<div class="col-sm-2">
+							<select
+								class="form-control select select-primary select-block mbl">
+									<option value="2015">2015</option>
+									<option value="2014">2014</option>
+									<option value="2013">2013</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">专业：</label>
+						<div class="col-sm-4">
+							<input class="form-control input-sm" name="major"
+								placeholder="请填入你的专业名称" type="text" />
+						</div>
+						
+						<label for="" class="col-sm-2 control-label">学历：</label>
+						<div class="col-sm-2">
+							<select
+								class="form-control select select-primary select-block mbl">
+									<option value="本科">本科</option>
+									<option value="专科">专科</option>
+									<option value="研究生">研究生</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group text-center">
+						<div class=" col-sm-12 ">
+							<button type="submit" class="btn btn-info">保 存</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-3"></div>
+		</div>
+
+	</div>
+</div>
+<script type="text/javascript">
+$(".form_datetime").datetimepicker({
+	format: 'yyyy-mm-dd',
+	language:'zh-CN',
+	autoclose: 1,
+	startview:3,
+	minView: 2,
+});
+$("select").select2({dropdownCssClass: 'dropdown-inverse'});
+</script>

@@ -23,8 +23,9 @@ values('hongker','$2a$12$89F.noUbUefF2CF2i7ROSOHLs5vLHPA620.tUvW0yEtTD07tkks2C')
  * age 年龄
  * sex 性别
  * school 学校
+ * major 专业
  * education 学历
- * grade 年级
+ * grade 毕业时间
  * created_at 创建时间
  * updated_at 更新时间
  */
@@ -36,6 +37,7 @@ create table users(
 	age tinyint not null default 20,
 	sex char(1) not null default ' ',
 	school varchar(50) not null default ' ',
+	major varchar(30) not null default '',
 	education varchar(4) not null default ' ',
 	grade varchar(4) not null default ' ',
 	created_at timestamp not null default current_timestamp,

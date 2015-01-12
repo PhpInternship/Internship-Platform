@@ -1,6 +1,7 @@
 <?php
 namespace Frontend\Controllers;
 
+use Models\Users;
 /**
  * 简述：学生模块。
  * 
@@ -13,6 +14,14 @@ namespace Frontend\Controllers;
  *
  */
 class StudentController extends BaseController {
+	/**
+	 * (首页模块)
+	 * @see \Frontend\Controllers\BaseController::initialize()
+	 */
+	protected function initialize() {
+		parent::initialize();
+		\Phalcon\Tag::appendTitle('学生');
+	}
 	/**
 	 * 首页
 	 */
@@ -32,6 +41,15 @@ class StudentController extends BaseController {
 	 */
 	public function infoAction() {
 		$id = $this->dispatcher->getParam(0,'int');
+	}
+	
+	/**
+	 * 完善信息
+	 */
+	public function writeInfoAction() {
+		$userinfo = Users::findFirst($this->session->get('id'));
+		
+		$this->view->setVar('user',$userinfo);
 	}
 	
 	

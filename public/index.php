@@ -14,10 +14,22 @@ $di->set ( 'router', function () {
 	
 	$router->setDefaultModule ( "frontend" );
 	
-	$router->add ( "/login", array (
-			'module' => 'frontend',
-			'controller' => 'login',
+	$router->add ( "/admin", array (
+			'module' => 'backend',
+			'controller' => 'index',
 			'action' => 'index' 
+	) );
+	
+	$router->add ( "/admin/:controller", array (
+			'module' => 'backend',
+			'controller' => 1,
+			'action' => 'index'
+	) );
+	
+	$router->add ( "/admin/:controller/:action", array (
+			'module' => 'backend',
+			'controller' => 1,
+			'action' => 2
 	) );
 	
 	return $router;

@@ -15,6 +15,15 @@ use Models\Articles;
  */
 class BlogController extends BaseController {
 	/**
+	 * (首页模块)
+	 * @see \Frontend\Controllers\BaseController::initialize()
+	 */
+	protected function initialize() {
+		parent::initialize();
+		\Phalcon\Tag::appendTitle('博客');
+	}
+	
+	/**
 	 * 首页
 	 */
 	public function indexAction() {

@@ -25,12 +25,10 @@ class BaseController extends \Phalcon\Mvc\Controller {
 	 */
 	protected function initialize() {
 		//给页面的标题添加前缀
-	
+		\Phalcon\Tag::setTitle('Platform | ');
 		$this->view->setVar("controller",$this->controller);
 		//设置模板
 		$this->view->setTemplateAfter('common');
-	
-	
 	
 	}
 	

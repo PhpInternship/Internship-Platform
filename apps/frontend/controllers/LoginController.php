@@ -16,6 +16,11 @@ use Models\Managers;
  *
  */
 class LoginController extends \Phalcon\Mvc\Controller {
+	protected function initialize() {
+		//给页面的标题添加前缀
+		\Phalcon\Tag::setTitle('Platform | 登录');
+	}
+	
 	/**
 	 * 显示登录页面
 	 */
