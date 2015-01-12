@@ -43,7 +43,14 @@ class BlogController extends BaseController {
 		
 		$article = Articles::findFirst($id);
 		
-		$this->view->setVar('article',$article);
+		//如果文章不为空
+		if($article) {
+			$this->view->setVar('article',$article);
+		}
+		
+		//否则显示404错误
+		echo '404';exit;
+		
 	}
 	
 	/**

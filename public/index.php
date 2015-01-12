@@ -1,5 +1,5 @@
 <?php
-use \Phalcon\Mvc\Router, \Phalcon\Mvc\Application, \Phalcon\DI\FactoryDefault;
+use \Phalcon\Mvc\Router, Phalcon\Mvc\Application, Phalcon\DI\FactoryDefault;
 /**
  * 读取配置文件
  */
@@ -10,7 +10,7 @@ $di = new FactoryDefault ();
 // Specify routes for modules
 $di->set ( 'router', function () {
 	
-	$router = new Router();
+	$router = new Router ();
 	
 	$router->setDefaultModule ( "frontend" );
 	
@@ -23,13 +23,13 @@ $di->set ( 'router', function () {
 	$router->add ( "/admin/:controller", array (
 			'module' => 'backend',
 			'controller' => 1,
-			'action' => 'index'
+			'action' => 'index' 
 	) );
 	
 	$router->add ( "/admin/:controller/:action", array (
 			'module' => 'backend',
 			'controller' => 1,
-			'action' => 2
+			'action' => 2 
 	) );
 	
 	return $router;
@@ -43,7 +43,7 @@ $di->set ( 'db', function () use($config) {
 			"dbname" => $config->database->dbname,
 			'charset' => $config->database->charset 
 	) );
-	$conn->query("set names utf8");// 变通解决办法
+	$conn->query ( "set names utf8" ); // 变通解决办法
 	return $conn;
 } );
 // 开启session
@@ -52,6 +52,16 @@ $di->setShared ( 'session', function () {
 	$session->start ();
 	return $session;
 } );
+
+$di->set ( 'crypt', function () use($config){
+	
+	$crypt = new \Phalcon\Crypt ();
+	
+	// 设置全局加密密钥
+	$crypt->setKey ( $config->secuity->key );
+	
+	return $crypt;
+}, true );
 $di->set ( 'dispatcher', function () {
 	
 	// Create an EventsManager
@@ -110,8 +120,7 @@ try {
 	) );
 	
 	// Handle the request
-	echo $application->handle ()->getContent();
-
-} catch(\Exception $e){
-    echo $e->getMessage();
+	echo $application->handle ()->getContent ();
+} catch ( \Exception $e ) {
+	echo $e->getMessage ();
 }
