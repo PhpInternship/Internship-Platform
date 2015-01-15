@@ -40,7 +40,7 @@ class LoginController extends \Phalcon\Mvc\Controller {
                 
                 if($this->_checkUser($username,$password)) {
                 	$type = $this->_getUserType($username);
-                	
+                	$this->session->set('type',$type);
 	                if($type==0) {
 						//普通用户
 	                	$user = Users::findFirst("username='$username'");
