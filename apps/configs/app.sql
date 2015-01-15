@@ -288,8 +288,8 @@ values('company1',20,'男','company1@qq.com','马云','511621196501012987','1592
 drop table if exists messages;
 create table tables(
 	id int not null primary key auto_increment,
-	user_id int not null,
-	target_id int not null,
+	userid int not null,
+	targetid int not null,
 	content varchar(255) not null,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
@@ -318,30 +318,32 @@ values('admin','127.0.0.1');
 /*
  * 评论内容表 comments
  * id 主键
- * author_id 评论者id
+ * authorid 评论者id
  * content 内容
- * target_id 评论目标
+ * targetid 评论目标
  * type 类型(1:文章)
  * created_at 创建时间
  * updated_at 更新时间
  */
 drop table if exists comments;
-create table tables(
+create table comments(
 	id int not null primary key auto_increment,
-	author_id int not null,
+	authorid int not null,
 	content varchar(255) not null,
 	target_id int not null,
 	type tinyint not null default 1,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
 )charset=utf8;
+insert into comments(author_id,content,target_id)
+values(1,'楼主这文章写得不错!!!',1);
 
 /*
  * 回复评论表 replies
  * id 主键
- * author_id 回复者
+ * authorid 回复者
  * content 回复内容
- * target_id 回复目标
+ * targetid 回复目标
  * root_id 根评论id
  * created_at 创建时间
  * updated_at 更新时间
@@ -349,9 +351,9 @@ create table tables(
 drop table if exists replies;
 create table replies(
 	id int not null primary key auto_increment,
-	author_id int not null,
+	authorid int not null,
 	content varchar(255) not null,
-	target_id int not null,
+	targetid int not null,
 	root_id int not null,
 	created_at timestamp not null default current_timestamp,
 	updated_at timestamp not null default '0000-00-00 00:00:00'
