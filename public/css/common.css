@@ -389,3 +389,19 @@ blockquote {
 	padding-top:3px;
 	padding-bottom:3px;
 }
+.content {
+	padding-bottom:20px;
+}
+.comment-footer {
+	float:right;
+	text-align:right;
+	width:100%;
+	margin-bottom:2px;
+}
+.comments-list .media-body {
+	width:100%;
+}
+.comments-list .hr-dotted {
+	border:1px dotted #D7D7D7;
+	margin-top:0px;
+}

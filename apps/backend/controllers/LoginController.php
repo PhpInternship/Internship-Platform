@@ -23,4 +23,11 @@ class LoginController extends \Phalcon\Mvc\Controller {
 	public function indexAction() {
 		
 	}
+	
+	/**
+	 * 验证账户
+	 */
+	public function authAction() {
+		echo 'auth';
+	}
 }

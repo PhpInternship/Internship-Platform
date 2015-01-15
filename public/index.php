@@ -24,7 +24,7 @@ $di->set ( 'router', function () {
 			'module' => 'backend',
 			'controller' => 1,
 			'action' => 'index'
-	) );
+	));
 	
 	$router->add ( "/admin/:controller/:action", array (
 			'module' => 'backend',

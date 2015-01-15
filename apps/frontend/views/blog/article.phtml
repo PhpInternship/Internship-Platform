@@ -11,6 +11,59 @@
 				<div class="content">
 					<?php echo $article->content?>
 				</div>
+				<hr>
+				<blockquote>评论区</blockquote>
+				<div class="comments-list">
+				<div class="media">
+					<a class="media-left" href="#"> <img data-holder-rendered="true"
+						src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjE0LjUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg=="
+						style="width: 64px; height: 64px;" class="media-object"
+						data-src="holder.js/64x64" alt="64x64">
+					</a>
+					<div class="media-body">
+						<p class="media-heading">关羽</p>
+						<small>你这篇文章写得很不错!</small>
+						<?php for($i=1;$i<3;$i++):?>
+						<div class="media">
+							<a class="media-left" href="#"> <img data-holder-rendered="true"
+								src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjE0LjUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg=="
+								style="width: 64px; height: 64px;" class="media-object"
+								data-src="holder.js/64x64" alt="64x64">
+							</a>
+							
+							<div class="media-body">
+								<p class="media-heading">刘黄书</p>
+								<small>二弟说得有道理</small>
+								<p class="comment-footer"><small><span class="date"> 2015-01-15 </span><span class="reply"> <a href="#">回复</a> </span></small></p>
+							</div>
+							
+						</div>
+						<hr class="hr-dotted">
+						<?php endfor;?>
+					</div>
+					<?php for($i=1;$i<5;$i++):?>
+					<div class="media">
+						<a class="media-left" href="#"> <img data-holder-rendered="true"
+							src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PGRlZnMvPjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjE0LjUiIHk9IjMyIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NjR4NjQ8L3RleHQ+PC9nPjwvc3ZnPg=="
+							style="width: 64px; height: 64px;" class="media-object"
+							data-src="holder.js/64x64" alt="64x64">
+						</a>
+						<div class="media-body">
+							<p class="media-heading">赵云</p>
+							<small>楼主休走，看我一枪刺死你。楼主休走，看我一枪刺死你。楼主休走，看我一枪刺死你。楼主休走，看我一枪刺死你。楼主休走，看我一枪刺死你。楼主休走，看我一枪刺死你。</small>
+							<p class="comment-footer">
+								<small>
+									<span class="floor"><?php echo $i?>楼</span>
+									<span class="date"> 2015-01-15 </span>
+									<span class="reply"> <a href="#">回复</a> </span>
+								</small>
+							</p>
+						</div>
+					</div>
+					<?php endfor;?>
+				</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
